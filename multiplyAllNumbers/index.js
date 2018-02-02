@@ -1,17 +1,7 @@
-function multiplyAllNumbers(array) {
-  const multiplied = [];
+const multiplyAllNumbers = (numbers) => {
+  const arrayProduct = numbers.reduce((prev, value) => prev * value, 1);
 
-  array.reduce((acc, val, index, arr) => {
-    acc = 1;
-
-    arr.map((_val, _index) => {
-      if (index !== _index) acc *= _val;
-    });
-
-    multiplied.push(acc);
-  }, []);
-
-  return multiplied;
-}
+  return numbers.map(value => arrayProduct / value);
+};
 
 multiplyAllNumbers([1, 2, 3, 4, 5]);
